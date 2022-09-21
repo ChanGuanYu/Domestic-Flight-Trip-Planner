@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Air United</title>
+		<link rel="icon" href="img/logo/icon.png" type="image/icon type">
+		<link rel="stylesheet" href="mdl/material.min.css">
+		<link rel="stylesheet" href="css/center_wrap.css">
+		<link rel="stylesheet" href="css/table.css">
+		<link rel="stylesheet" href="css/button.css">
+		<link rel="stylesheet" href="css/modal.css">
+		<script src="mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="js/shared.js"></script>
+		<script src="js/navigationBar.js"></script>
+	</head>
+	<body onload="displayUsername(); tripSummary()">
+		<!-- Always shows a header, even in smaller screens. -->
+		<!--mdl-layout mdl-js-layout mdl-layout--fixed-header"; to show the headings of the web page( navigation bar).-->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						<a class="mdl-navigation__link" href="indexR.html"><img src="img/logo/icon.png" class="logo"></a>
+					</span>
+					<!--navigation to the left-->
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" href="TripHistoryList.html">Trip History</a>
+						<a class="mdl-navigation__link" href="ScheduledTripsList.html">Scheduled Trips</a>
+						<a class="mdl-navigation__link" href="viewAllRoutesR.html">View All Routes</a>
+					</nav>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<div id="username"></div>
+						<a class="mdl-navigation__link mdl-layout-spacer">
+							<!--This /i> is for mdl native icon-->
+							<i class="material-icons mdl-list__item-avatar">person</i>
+						</a>
+						<!-- for log-out button-->
+						<a id="logout" class="mdl-navigation__link" onclick="logout()" style="cursor: pointer">Logout</a>
+					</nav>
+				</div>
+			</header>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+					<!--main content here-->
+					<div class="text-center">
+						<h1>Trip Summary</h1>
+					</div>
+					<div id="tripSummary" class="mdl-grid content-center trip-summary-margin">
+						<!-- commented out to generate trip summary for each user -->
+						<!-- <table class="mdl-cell mdl-cell--6-col text-center table-border">
+							<tbody>
+								<tr>
+									<th class="summary-table">Country</th>
+									<td class="summary-table">Malaysia</td>
+								</tr>
+								<tr>
+									<th class="summary-table">Date of trip</th>
+									<td class="summary-table">11/9/2020</td>
+								</tr>
+								<tr>
+									<th class="summary-table">Flight route(s)</th>
+									<td class="summary-table">Kuala Lumpur International Airport<br/>to<br/>Kota Kinabalu International Airport</td>
+								</tr>
+								<tr>
+									<th class="summary-table">Number of stops</th>
+									<td class="summary-table">1</td>
+								</tr>
+							</tbody>
+						</table> -->
+					</div>
+					<div class="mdl-grid content-center">
+						<div class="mdl-cell mdl-cell--6-col text-center">
+							<button class="mdl-button mdl-js-button mdl-button--raised trip-summary-button" onclick="homePage()">
+								Cancel
+							</button>
+						</div>
+						<div class="mdl-cell mdl-cell--6-col text-center">
+							<button id="show-dialog" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored trip-summary-button">
+								Save
+							</button>
+						</div>
+					</div>
+
+					<dialog id="confirmation-modal" class="mdl-dialog text-center dialog-width">
+						<h4 class="mdl-dialog__title">Do you want to schedule this trip?</h4>
+						<div class="mdl-dialog__content">
+							<h6>
+							  By pressing yes, you will no longer be able to make any changes to this trip.
+                            </h6>
+                        </div>
+						<div class="mdl-grid content-center">
+							<div class="mdl-cell mdl-cell--6-col text-center">
+								<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored trip-summary-button button-dialog" style="max-width: 200px" onclick="confirmTrip()">
+                                    Yes
+                                </button>
+							</div>
+							<div class="mdl-cell mdl-cell--6-col text-center">
+								<button class="mdl-button mdl-js-button mdl-button--raised trip-summary-button button-dialog" style="max-width: 200px" onclick=dialog.close()>
+                                    No
+                                </button>
+							</div>
+						</div>
+					</dialog>
+
+					<dialog id="step2Confirm" class="mdl-dialog text-center dialog-width">
+						<h4 class="mdl-dialog__title">Congratulations!<br>You have successfully scheduled your trip!</h4>
+						<div class="mdl-dialog__content">
+							<h6>
+							  You can now view all details for your upcoming trips in your Scheduled Trips page.
+                            </h6>
+                        </div>
+						<div class="mdl-grid content-center">
+							<div class="mdl-cell mdl-cell--10-col text-center">
+								<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored trip-summary-button button-style-width" onclick=homePage()>
+                                    Return to home page
+                                </button>
+							</div><br>
+							<div class="mdl-cell mdl-cell--10-col text-center">
+								<button class="mdl-button mdl-js-button mdl-button--raised trip-summary-button button-style-width">
+                                    Go to my Scheduled Trips
+                                </button>
+							</div>
+						</div>
+					</dialog>
+					<script src="js/tripSummaryProcessR.js"></script>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

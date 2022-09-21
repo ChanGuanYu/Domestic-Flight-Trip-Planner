@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Air United</title>
+		<link rel="icon" href="img/logo/icon.png" type="image/icon type">
+		<link rel="stylesheet" href="mdl/material.min.css">
+		<link rel="stylesheet" href="css/center_wrap.css">
+		<script src="mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+		<link rel="stylesheet" href="css/map.css">
+		<script src="js/navigationBar.js"></script>
+		<script src="js/shared.js"></script>
+	</head>
+	<body onload="displayUsername()">
+		<!-- Always shows a header, even in smaller screens. -->
+		<!--mdl-layout mdl-js-layout mdl-layout--fixed-header"; to show the headings of the web page( navigation bar).-->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						<a class="mdl-navigation__link" href="indexR.html"><img src="img/logo/icon.png" class="logo"></a>
+					</span>
+					<!--navigation to the left-->
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" href="TripHistoryList.html">Trip History</a>
+						<a class="mdl-navigation__link" href="ScheduledTripsList.html">Scheduled Trips</a>
+						<a class="mdl-navigation__link" href="viewAllRoutesR.html">View All Routes</a>
+					</nav>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<div id="username"></div>
+						<a class="mdl-navigation__link mdl-layout-spacer" >
+							<!--This /i> is for mdl native icon-->
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+						</a>
+						<!-- for log-out button-->
+						<a id="logout" class="mdl-navigation__link" onclick="logout()" style="cursor: pointer">Logout</a>
+					</nav>
+				</div>
+			</header>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+					<!--main content here-->
+					<div class="text-center">
+						<h3>
+							Select a country to view all available routes
+						</h3>
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--4-col text-center" >
+							<div id="routesList">
+								<br><br><br><br><br><br><br><br><br><br>
+								<select id="countriesList" class="stretch">
+									<option selected disabled> Select a country </option>
+								</select><br><br>
+								
+								<button onclick="mainView()" class="mdl-button mdl-js-button mdl-button--raised ">View all routes</button>
+							</div>
+						</div>
+						
+						<div class="mdl-cell mdl-cell--8-col">
+							<div id="map"></div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="js/allRoutes.js"></script>
+	</body>
+</html>

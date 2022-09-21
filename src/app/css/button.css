@@ -1,0 +1,45 @@
+
+
+.trip-summary-button{
+	width:40%;
+}
+
+.home-view-routes{
+	width:60%;
+}
+
+.width-button-view{
+	width: 200px;
+}
+
+.width-button-return{
+	width: 625px;
+	background-color: rgb(158, 158, 158);
+    color: rgb(66, 66, 66);
+    padding: 14px 0;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;       
+}
+
+.button-style-width{
+	width: 600px;
+}
+
+.button-dialog{
+	width: 275px;
+}
+
+.tab { 
+	margin-left: 19px; 
+}
+
+.button-trip-details{
+	background-color: rgb(158, 158, 158);
+	color: rgb(66, 66, 66);
+	padding: 14px 0;
+	margin: 10px 0;
+	border: none;
+	cursor: pointer;
+}
+

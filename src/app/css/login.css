@@ -1,0 +1,41 @@
+
+
+h1{
+    font-size: 64px;
+    text-align: center;
+}
+.formcontainer{
+    text-align: center;
+    margin: 10px 10px 10px;
+}
+.container{
+	padding: 16px 0;
+	text-align:center;
+}
+input[type=text], input[type=password]{
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+	box-sizing: border-box;
+	width: 500px;
+}
+button{
+	background-color: rgb(158, 158, 158);
+    color: rgb(66, 66, 66);
+    padding: 14px 0;
+    margin: 10px 0;
+    border: none;
+    cursor: pointer;
+}
+
+button.login-button{
+	width: 300px;
+	font-size: 20px;
+}
+
+button.homepage-button{
+	width: 625px; 
+	font-size: 20px;
+}
+

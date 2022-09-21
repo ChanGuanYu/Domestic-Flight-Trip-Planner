@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Air United</title>
+		<link rel="icon" href="img/logo/icon.png" type="image/icon type">
+		<link rel="stylesheet" href="mdl/material.min.css">
+        <link rel="stylesheet" href="css/center_wrap.css">
+        <link rel="stylesheet" href="css/login.css">
+		<script src="mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="js/navigationBar.js"></script>
+		<script src="js/shared.js"></script>
+		<script src="js/loginPage.js"></script>
+	</head>
+	<body>
+		<!-- Always shows a header, even in smaller screens. -->
+		<!--mdl-layout mdl-js-layout mdl-layout--fixed-header"; to show the headings of the web page( navigation bar).-->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						<a class="mdl-navigation__link" href="index.html"><img src="img/logo/icon.png" class="logo"></a>
+					</span>
+					<!--navigation to the left-->
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" onclick="checkPastTripsLogin();return false;">Trip History</a>
+						<a class="mdl-navigation__link" onclick="checkFutureTripsLogin();return false;">Scheduled Trips</a>
+                        <a class="mdl-navigation__link" href="viewAllRoutesU.html">View All Routes</a>
+					</nav>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" href="tripSummaryRegistration.html">Register</a>
+					</nav>
+				</div>
+			</header>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+                    <!--main content here-->
+                    <h1>Welcome Back!</h1>
+
+                    <div class="formcontainer">
+                        <hr>
+                        <div class="container">
+                            <div>
+                                Email Address: &nbsp; &nbsp; 
+                                <input type="text" id="email">
+                            </div>
+                            <div>
+                                Password: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <input type="password" id="password">
+                            </div>
+                        </div>
+
+                        <br>
+                
+                        <button class="login-button" type="submit" onclick="loginTripSummary()">Log In</button>
+
+                        <br> <br> <hr> <br>
+
+                    </div>
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

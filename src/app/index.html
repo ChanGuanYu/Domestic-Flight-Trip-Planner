@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome</title>
+		<link rel="icon" href="img/logo/icon.png" type="image/icon type">
+		<link rel="stylesheet" href="mdl/material.min.css">
+		<link rel="stylesheet" href="css/center_wrap.css">
+		<script src="mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="js/navigationBar.js"></script>
+		<script src="js/shared.js"></script>
+	</head>
+	<body>
+		<!-- Always shows a header, even in smaller screens. -->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						<a class="mdl-navigation__link" href="index.html"><img src="img/logo/icon.png" class="logo"></a>
+					</span>
+					<!--navigation to the left-->
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" onclick="checkPastTripsLogin();return false;">Trip History</a>
+						<a class="mdl-navigation__link" onclick="checkFutureTripsLogin();return false;">Scheduled Trips</a>
+						<a class="mdl-navigation__link" href="viewAllRoutesU.html">View All Routes</a>
+					</nav>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" href="loginPage.html">Login</a>
+						<a class="mdl-navigation__link" href="registrationPage.html">Register</a>
+					</nav>
+				</div>
+			</header>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+					<div class="mdl-grid content-main-center">
+						<div class="mdl-cell mdl-cell--4-col text-center">
+							<h1>Welcome!</h1>
+							<p>Please select a country and a date to start scheduling your trip with us.</p>
+							<!--# =placeholder for results page-->
+								<!--class="mdl-grid content-center text-center"; for the select a country drop down list and the date input.-->
+								<div class="mdl-grid content-center text-center">
+									<!--Dropdown list-->
+									<div class="mdl-cell mdl-cell--5-col">
+										<select id="countriesList" name="countries" class="stretch"></select>
+									</div>
+									<!--Date selector-->
+									<!--class="stretch" is a css style to strech the container to the full lenght in this 5-->
+									<div class="mdl-cell mdl-cell--5-col">
+										<input type="date" id="travelDate" name="travelDate" class="stretch">
+									</div>
+								</div>
+							<!--style="width:60%; used just to put only once for the home page. not used again-->
+							<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored  width-button home-view-routes" onclick="scheduleTrip()">
+								Schedule My Trip
+							</button>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="js/mainU.js"></script>
+	</body>
+</html>

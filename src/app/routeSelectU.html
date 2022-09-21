@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Route selection</title>
+		<link rel="icon" href="img/logo/icon.png" type="image/icon type">
+		<link rel="stylesheet" href="mdl/material.min.css">
+		<link rel="stylesheet" href="css/center_wrap.css">
+		<script src="mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet'>
+		<link rel="stylesheet" href="css/map.css">
+		<script src="js/navigationBar.js"></script>
+		<script src="js/shared.js"></script>
+	</head>
+	<body onload="initialize()">
+		<!-- Always shows a header, even in smaller screens. -->
+		<!--mdl-layout mdl-js-layout mdl-layout--fixed-header"; to show the headings of the web page( navigation bar).-->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						<a class="mdl-navigation__link" href="index.html"><img src="img/logo/icon.png" class="logo"></a>
+					</span>
+					<!--navigation to the left-->
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" onclick="checkPastTripsLogin();return false;">Trip History</a>
+						<a class="mdl-navigation__link" onclick="checkFutureTripsLogin();return false;">Scheduled Trips</a>
+						<a class="mdl-navigation__link" href="viewAllRoutesU.html">View All Routes</a>
+					</nav>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" href="loginPage.html">Login</a>
+						<a class="mdl-navigation__link" href="registrationPage.html">Register</a>
+						</a>
+					</nav>
+				</div>
+			</header>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+					<!--main content here-->
+					<div id="countrySelected" class="text-center">
+						
+					</div>
+					<div class="mdl-grid">
+						<div class="mdl-cell mdl-cell--4-col text-center" >
+							<div id="routesList">
+								<br>
+								<h6>Choose your desired route</h6>
+								<select id="startingAirport" class="stretch"></select><br><br>
+								<div>
+									<button onClick="start()" class="mdl-button mdl-js-button mdl-button--raised ">Start route selection</button><br><br>
+								</div>
+								<!--Selection of stops or destination-->
+								<select id="nextAirport" class="stretch"></select><br><br>
+								<button onClick="addStops()" class="mdl-button mdl-js-button mdl-button--raised ">Add stop</button> 
+								&nbsp; &nbsp; &nbsp;
+								<button onClick="finishU()" class="mdl-button mdl-js-button mdl-button--raised ">End route selection</button><br><br>
+
+								<!--Text display of route-->
+								<table id="selectedRoute" class = "mdl-js-data-table table-border" style="width:100%">
+									
+								</table>
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--8-col">
+							<div id="map"></div>
+						</div>
+					</div>
+				</div>
+			</main>
+		</div>
+		<script src="js/flightRouteMap.js"></script>
+	</body>
+</html>
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Air United</title>
+		<link rel="icon" href="img/logo/icon.png" type="image/icon type">
+		<link rel="stylesheet" href="mdl/material.min.css">
+		<link rel="stylesheet" href="css/center_wrap.css">
+		<link rel="stylesheet" href="css/button.css">
+		<link rel="stylesheet" href="css/table.css">
+		<script src="mdl/material.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<script src="js/shared.js"></script>
+		<script src="js/navigationBar.js"></script>
+    </head>
+    
+	<body onload="displayUsername()">
+		<!-- Always shows a header, even in smaller screens. -->
+		<!--mdl-layout mdl-js-layout mdl-layout--fixed-header"; to show the headings of the web page( navigation bar).-->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+				<div class="mdl-layout__header-row">
+					<!-- Title -->
+					<span class="mdl-layout-title">
+						<a class="mdl-navigation__link" href="indexR.html"><img src="img/logo/icon.png" class="logo"></a>
+					</span>
+					<!--navigation to the left-->
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<a class="mdl-navigation__link" href="TripHistoryList.html">Trip History</a>
+						<a class="mdl-navigation__link" href="ScheduledTripsList.html">Scheduled Trips</a>
+						<a class="mdl-navigation__link" href="viewAllRoutesR.html">View All Routes</a>
+					</nav>
+					<!-- Add spacer, to align navigation to the right -->
+					<div class="mdl-layout-spacer"></div>
+					<nav class="mdl-navigation mdl-layout--large-screen-only">
+						<div id="username"></div>
+						<a class="mdl-navigation__link mdl-layout-spacer">
+							<!--This /i> is for mdl native icon-->
+							<i class="material-icons mdl-list__item-avatar">person</i>
+						</a>
+						<!-- for log-out button-->
+						<a id="logout" class="mdl-navigation__link" onclick="logout()" style="cursor: pointer">Logout</a>
+					</nav>
+				</div>
+			</header>
+			<main class="mdl-layout__content">
+				<div class="page-content">
+                    <!--main content here-->
+                    <div class="mdl-grid content-center">
+						<div class="mdl-cell mdl-cell--8-col text-center">
+                            <h1>Scheduled Trips </h1>
+						    <div>
+								<!--Start of table--> 
+									<table id="displayFutureTrips" class="mdl-data-table mdl-js-data-table full-width-table mdl-shadow--2dp">
+										<tbody>
+											<!-- <div id="displayFutureTrips"> -->
+												<!--
+												<tr>
+												<td class="mdl-data-table__cell--non-numeric">
+													<h4>Trip 004</h4>
+													<p>
+														Kuala Lumpur > Sabah <br>
+														Date: 4th December 2020
+													</p>
+												</td>							
+												<td>
+													<button class="width-button-view button-trip-details" type="submit">View trip details</button>
+												</td>
+												</tr>
+												<tr>
+													<td class="mdl-data-table__cell--non-numeric">
+														<h4>Trip 005</h4>
+														<p>
+															Kuala Lumpur > Sabah <br>
+															Date: 4th December 2021
+														</p>
+													</td>	
+												<td>
+													<button class="width-button-view button-trip-details" type="submit">View trip details</button>
+												</td>
+												</tr>
+												<tr>
+													<td class="mdl-data-table__cell--non-numeric">
+														<h4>Trip 006</h4>
+														<p>
+															Kuala Lumpur > Sabah <br>
+															Date: 4th December 2022
+														</p>
+													</td>	
+												<td>
+													<button class="width-button-view button-trip-details" type="submit">View trip details</button>
+												</td>
+												</tr>-->
+											<!-- </div> -->
+									  	</tbody>
+									</table> 
+									<!--End of table-->
+                            </div>
+						</div>
+					</div>
+					
+					<div class="mdl-grid content-center">
+						<button class="width-button-return button-trip-details" type="submit" onclick="window.location.href='indexR.html'">Return to Home Page</button>
+					</div>
+				</div>
+				<!-- Body content ends here-->
+			</main>
+		</div>
+		<script src="js/scheduledTripsListPage.js"></script>
+	</body>
+</html>

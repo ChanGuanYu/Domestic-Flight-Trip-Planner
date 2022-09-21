@@ -1,0 +1,70 @@
+/*For centering main container elements for whole page such as <div> */
+.content-main-center
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80vh;
+}
+.mdl-layout-spacer /* for the user info on header */
+{
+	padding-left:0px;
+}
+
+/*For centering elements such as <div> */
+.content-center 
+{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/*For centering text elements such as <h1> or <p> */
+.text-center 
+{
+	text-align: center;
+	margin-left: 40;
+}
+
+/*For stretching to entire available width */
+.stretch 
+{
+	width: 100%;
+	border:1px solid black;
+}
+.logo
+{
+	width: 50px;
+}
+
+.width-button
+{
+	width:60%;
+}
+
+/* for mapbox */
+#map
+{
+	height: calc(80vh - 80px);
+	width: 900px;
+	margin-left: 950px;
+}
+
+/* for table data, header and body */
+td
+{
+	padding: 5px;
+	font-weight: bold;
+}
+th
+{
+	border-bottom:1px solid black;
+}
+tbody
+{
+	text-align:left;
+}
+
+.trip-summary-margin{
+	margin-top:100px;
+}
